@@ -2,9 +2,10 @@
  * @Descripttion: 公共头部
  * @Author: Hades
  * @Date: 2021-01-25 21:45:56
- * @LastEditTime: 2021-01-25 21:58:06
+ * @LastEditTime: 2021-01-26 21:47:35
  */
 import Link from 'next/link'
+
 import Router, { withRouter } from 'next/router'
 import './layout.less'
 const MyHeader = ({router}) =>{
@@ -25,7 +26,7 @@ const MyHeader = ({router}) =>{
             <div className="container">
                 <Link href="/">
                     <div className="logo-link">
-                        <img className="logo" src="/static/images/logo.png" alt="logo" />
+                        <img className="logo" src="/logo.png" alt="logo" />
                         <span className="url"> xl686.com </span>
                     </div>
                 </Link>

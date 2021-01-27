@@ -61,6 +61,7 @@ const Plan = () =>{
             height: 50px;
             border-radius: 5px;
             background-color: var(--header-background-color);
+            box-shadow: var(--box-shadow);
             overflow: hidden;
             font-family: Damion, cursive, Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
           }

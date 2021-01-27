@@ -2,7 +2,7 @@
  * @Descripttion: 
  * @Author: Hades
  * @Date: 2021-01-26 09:36:06
- * @LastEditTime: 2021-01-26 14:46:20
+ * @LastEditTime: 2021-01-27 15:20:16
  */
 
 import { useEffect } from 'react'
@@ -10,22 +10,32 @@ import { useDispatch } from 'react-redux'
 import MyLayout from '../components/layout/Layout'
 import Section from '../components/index/Section'
 import Plan from '../components/index/Plan'
-import { getSaying, getSection } from '../lib/api'
-import {setSaying } from '../store/actions'
-export default function Home({sayingList,section}) {
+import HotArticle from '../components/comm/HotArticle'
+import Assort from '../components/comm/Assort'
+import ArticleList from '../components/comm/ArticleList'
+import { getSaying, getSection, getHotArticle, getArticleList } from '../lib/api'
+import {setSaying,setHotArticle, setSort } from '../store/actions'
+export default function Home({sayingList,section,hotArticle, articleList}) {
   const dispatch = useDispatch()
 
   useEffect(()=>{
     dispatch(setSaying(sayingList))
+    dispatch(setHotArticle(hotArticle))
+    dispatch(setSort(section))
   },[])
 
   return (
     <MyLayout>
       <div style={{display:'flex',justifyContent:'space-between'}} >
-          <div style={{width:740}}>
-            <Section section={section}/>
-            <Plan/>
-          </div>
+        <div style={{width:740}}>
+          <Section section={section}/>
+          <Plan/>
+          <ArticleList articleList={articleList}/>
+        </div>
+        <div style={{width:320}}>
+          <HotArticle/>
+          <Assort/>
+        </div>
       </div>
     </MyLayout>
   )
@@ -34,10 +44,14 @@ export default function Home({sayingList,section}) {
 export async function getStaticProps() {
   const sayingList = await getSaying()
   const section = await getSection()
+  const hotArticle = await getHotArticle()
+  const articleList = await getArticleList()
   return {
     props: { 
       sayingList,
-      section
+      section,
+      hotArticle,
+      articleList
     },
   }
 }

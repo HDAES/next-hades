@@ -31,6 +31,7 @@ const Section = ({section}) =>{
                     height:110px;
                     border-radius: 10px;
                     cursor: pointer;
+                    box-shadow: var(--box-shadow);
                 }
                 .section-container:hover .mask {
                     background-color: var(--mask-hover-color);

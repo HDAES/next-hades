@@ -2,10 +2,11 @@
  * @Descripttion: 
  * @Author: Hades
  * @Date: 2021-01-26 10:15:09
- * @LastEditTime: 2021-01-27 14:15:54
+ * @LastEditTime: 2021-01-27 22:08:36
  */
 import { combineReducers } from 'redux'
 import * as types from './types'
+
 
  // INITIAL TIMER STATE
 const initialConfigState = {
@@ -34,7 +35,8 @@ const configReducer = (state = initialConfigState, action) => {
 const initialContentState = {
     sayingList:[],
     hotArticle:[],
-    sortList:[]
+    sortList:[],
+    articleList:[]
 }
  
 
@@ -54,6 +56,11 @@ const contentReducer = (state = initialContentState, action) => {
       return {
         ...state,
         sortList: action.list
+      }
+    case types.ARTICLE:
+      return {
+        ...state,
+        articleList: action.list
       }
     default:
       return state

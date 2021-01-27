@@ -2,14 +2,24 @@
  * @Descripttion: 热门文章
  * @Author: Hades
  * @Date: 2021-01-27 13:51:00
- * @LastEditTime: 2021-01-27 14:45:14
+ * @LastEditTime: 2021-01-27 22:34:36
  */
+import { useEffect } from 'react'
 import Link from 'next/link'
-import { useSelector } from 'react-redux'
+import { useSelector,useDispatch } from 'react-redux'
+import { getHotArticle } from '../../lib/api'
+import { setHotArticle } from '../../store/actions'
 const HotArticle = () => {
-
+  const dispatch = useDispatch()
   const content = useSelector(({content}) => content)
 
+  useEffect(()=>{
+    if(content.hotArticle.length ===0){
+      getHotArticle().then(res =>{
+        dispatch(setHotArticle(res))
+      })
+    }
+  },[])
   return (
       <div className="hot-list" id="hotlist">
           <div className="hot-title">

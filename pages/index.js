@@ -2,7 +2,7 @@
  * @Descripttion: 
  * @Author: Hades
  * @Date: 2021-01-26 09:36:06
- * @LastEditTime: 2021-01-27 15:20:16
+ * @LastEditTime: 2021-01-27 22:34:04
  */
 
 import { useEffect } from 'react'
@@ -14,7 +14,7 @@ import HotArticle from '../components/comm/HotArticle'
 import Assort from '../components/comm/Assort'
 import ArticleList from '../components/comm/ArticleList'
 import { getSaying, getSection, getHotArticle, getArticleList } from '../lib/api'
-import {setSaying,setHotArticle, setSort } from '../store/actions'
+import {setSaying,setHotArticle, setSort, setArticleList } from '../store/actions'
 export default function Home({sayingList,section,hotArticle, articleList}) {
   const dispatch = useDispatch()
 
@@ -22,6 +22,8 @@ export default function Home({sayingList,section,hotArticle, articleList}) {
     dispatch(setSaying(sayingList))
     dispatch(setHotArticle(hotArticle))
     dispatch(setSort(section))
+    dispatch(setArticleList(articleList))
+    
   },[])
 
   return (

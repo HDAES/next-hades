@@ -2,7 +2,7 @@
  * @Descripttion: 
  * @Author: Hades
  * @Date: 2021-01-26 10:15:09
- * @LastEditTime: 2021-01-27 22:08:36
+ * @LastEditTime: 2021-01-28 11:11:01
  */
 import { combineReducers } from 'redux'
 import * as types from './types'
@@ -34,9 +34,7 @@ const configReducer = (state = initialConfigState, action) => {
   
 const initialContentState = {
     sayingList:[],
-    hotArticle:[],
     sortList:[],
-    articleList:[]
 }
  
 
@@ -47,20 +45,10 @@ const contentReducer = (state = initialContentState, action) => {
         ...state,
         sayingList: action.list
       }
-    case types.HOTARTICLE:
-      return {
-        ...state,
-        hotArticle: action.list
-      }
     case types.SORT:
       return {
         ...state,
         sortList: action.list
-      }
-    case types.ARTICLE:
-      return {
-        ...state,
-        articleList: action.list
       }
     default:
       return state

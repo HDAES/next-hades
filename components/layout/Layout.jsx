@@ -2,7 +2,7 @@
  * @Descripttion: 我的布局
  * @Author: Hades
  * @Date: 2021-01-25 21:48:41
- * @LastEditTime: 2021-01-26 14:27:31
+ * @LastEditTime: 2021-01-28 10:10:22
  */
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
@@ -17,7 +17,6 @@ import { changeToTop } from '../../store/actions'
 const MyLayout = ({children}) =>{
     
     const config = useSelector(({config}) => config)
-    const content = useSelector(({content}) => content)
     const dispatch = useDispatch()
 
     const [minHeight,setMinHeight] = useState(false)
@@ -49,9 +48,7 @@ const MyLayout = ({children}) =>{
                 {children}
             </div>
         </div>
-        {
-            content.sayingList.length>0?<Voice list={content.sayingList}/>:null
-        }
+        <Voice/>
         <Rightbar/>
         <Footer/>
         <Click/>

@@ -2,24 +2,11 @@
  * @Descripttion: 热门文章
  * @Author: Hades
  * @Date: 2021-01-27 13:51:00
- * @LastEditTime: 2021-01-27 22:34:36
+ * @LastEditTime: 2021-01-28 10:03:53
  */
-import { useEffect } from 'react'
-import Link from 'next/link'
-import { useSelector,useDispatch } from 'react-redux'
-import { getHotArticle } from '../../lib/api'
-import { setHotArticle } from '../../store/actions'
-const HotArticle = () => {
-  const dispatch = useDispatch()
-  const content = useSelector(({content}) => content)
 
-  useEffect(()=>{
-    if(content.hotArticle.length ===0){
-      getHotArticle().then(res =>{
-        dispatch(setHotArticle(res))
-      })
-    }
-  },[])
+import Link from 'next/link'
+const HotArticle = ({list}) => {
   return (
       <div className="hot-list" id="hotlist">
           <div className="hot-title">
@@ -27,7 +14,7 @@ const HotArticle = () => {
               <span>热门文章</span>
           </div>
           <div className="list">
-              {content.hotArticle.map((item, index) => {
+              {list.map((item, index) => {
                   return (
                       <div className="item" key={index}>
                           <span>{index + 1}</span>

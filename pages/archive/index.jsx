@@ -1,31 +1,21 @@
-import { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
 import MyLayout from '../../components/layout/Layout'
 import HotArticle from '../../components/comm/HotArticle'
+import Assort from '../../components/comm/Assort'
 import Header from './Header'
 import ArchiveList from './ArchiveList'
-import { getArticleList } from '../../lib/api/index'
-import { setArticleList } from '../../store/actions'
-const Archive = () =>{
-    const content = useSelector(({content}) => content)
-    const dispatch = useDispatch()
-    
-    useEffect(()=>{
-        if(content.articleList.length==0){
-            getArticleList().then( res =>{
-                dispatch(setArticleList(res))
-            })
-        }
-    },[])
+
+import { getArticleList,getHotArticle } from '../../lib/api/index'
+const Archive = ({articleList, hotArticle}) =>{
     return(
         <MyLayout>
             <div className="archive" >
                 <div className="left">
-                    <Header length={content.articleList.length}/>
-                    <ArchiveList list={content.articleList}/>
+                    <Header length={articleList.length}/>
+                    <ArchiveList list={articleList}/>
                 </div>
                 <div className="right">
-                    <HotArticle/>
+                    <HotArticle list={hotArticle}/>
+                    <Assort/>
                 </div>
             </div>
 
@@ -48,3 +38,14 @@ const Archive = () =>{
 }
 
 export default Archive;
+
+export async function getStaticProps() {
+    const articleList = await getArticleList()
+    const hotArticle = await getHotArticle()
+    return {
+      props: { 
+        articleList,
+        hotArticle
+      },
+    }
+  }

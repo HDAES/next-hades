@@ -5,7 +5,7 @@ const Section = ({section}) =>{
             {
                 section.map((item,index) =>{
                     return <div key={index} className="sectionItem">
-                        <Link href={{ pathname: "/section", query: { section: item.id }}}>
+                        <Link href={{ pathname: "/section", query: { id: item.id }}}>
                         <div className="section-container">
                             <img src={item.image}  alt={item.name} />
                             <div className="mask" />

@@ -1,21 +1,27 @@
 /*
- * @Descripttion: 
+ * @Descripttion: 分类页面
  * @Author: Hades
  * @Date: 2021-01-26 14:50:34
- * @LastEditTime: 2021-01-26 15:01:50
+ * @LastEditTime: 2021-01-28 14:41:32
  */
-import { withRouter } from 'next/router'
-const Section = () =>{
+import MyLayout from '../../components/layout/Layout'
+import Header from './Header'
+import Nav from './Nav'
+import { getSectionId } from '../../lib/api'
+const Section = ({info,list}) =>{
     return (
-        <div>123</div>
+        <MyLayout>
+            <Header info={info} length={list.length}/>
+            <div style={{display:'flex',alignItems:'flex-start'}}>
+                <Nav />
+            </div>
+        </MyLayout>
     )
 }
 
 Section.getInitialProps = async (ctx) => {
-    
-    return { 
-
-    }
+    const { info,list } = await getSectionId(ctx.query.id)
+    return { info,list }
 }
 
 export default Section;

@@ -2,7 +2,7 @@
  * @Descripttion: 分类页面
  * @Author: Hades
  * @Date: 2021-01-26 14:50:34
- * @LastEditTime: 2021-01-28 14:41:32
+ * @LastEditTime: 2021-01-29 09:49:32
  */
 import MyLayout from '../../components/layout/Layout'
 import Header from './Header'
@@ -13,7 +13,7 @@ const Section = ({info,list}) =>{
         <MyLayout>
             <Header info={info} length={list.length}/>
             <div style={{display:'flex',alignItems:'flex-start'}}>
-                <Nav />
+                <Nav list={list}/>
             </div>
         </MyLayout>
     )

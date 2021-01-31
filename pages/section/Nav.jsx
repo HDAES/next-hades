@@ -1,11 +1,11 @@
-const Nav = ({list}) =>{
+const Nav = ({list,changeNav}) =>{
     return (
         <div className="nav">
-        <div className="nav-item" >全部</div>
+        <div className="nav-item" onClick={()=>changeNav('all')}>全部</div>
         {
-            list.map((item,index)=>{
-                return <div className="nav-item" key={index}>
-                    {item.tname}
+            formateTags(list).map((item,index)=>{
+                return <div className="nav-item" key={index} onClick={()=>changeNav(item)}>
+                    {item}
                 </div>
             })
         }
@@ -32,3 +32,12 @@ const Nav = ({list}) =>{
 }
 
 export default Nav;
+
+//标签数组
+function formateTags(list){
+    let tempList = [] 
+    list.forEach(item => {
+        tempList.push(item.tname)
+    });
+    return Array.from(new Set(tempList))
+ }

@@ -14,13 +14,13 @@ const ArticleList = ({ articleList }) =>{
                 articleList.slice(0, page * PAGE_SIZE).map((item, index) => {
                     return (
                         <div key={index} className="item">
-                            <div className="title" onClick={()=>Router.push({pathname: '/article',query: { id:item.c_id}})}>{item.title}</div>
+                            <div className="title" onClick={()=>Router.push({pathname: '/article',query: { id:item.id}})}>{item.title}</div>
                             <div className="info">
                                 <div className="create-time">
                                     <i className="icon-rili iconfont" style={{ fontSize: 24, color: 'var(--text-color)' }} />
                                     <span className="time">{item.createTime.substr(0, 10)}</span>
                                 </div>
-                                <div className="folder" onClick={()=>Router.push({pathname: '/section',query: { section:item.f_id}})}>
+                                <div className="folder" onClick={()=>Router.push({pathname: '/section',query: { id:item.sid}})}>
                                     <i className="icon-wenjian iconfont" style={{ fontSize: 24, color: 'var(--text-color)' }} />   
                                     <span>{item.name}</span>
                                 </div>
@@ -29,7 +29,7 @@ const ArticleList = ({ articleList }) =>{
                                     <span>{item.tname}</span>
                                 </div>
                             </div>
-                            <div onClick={()=>Router.push({pathname: '/article',query: { id:item.c_id}})} className="image">
+                            <div onClick={()=>Router.push({pathname: '/article',query: { id:item.id}})} className="image">
                                 <img className="art-image" src={item.image} />
                             </div>
                             <div className="description">{item.des}</div>
@@ -47,6 +47,7 @@ const ArticleList = ({ articleList }) =>{
                         <div className="boxLoading" />
                     </div>
             }
+            
             <style jsx>{`
             .article-list{
                 width:100%;

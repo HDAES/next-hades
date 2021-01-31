@@ -2,7 +2,7 @@
  * @Descripttion: 我的布局
  * @Author: Hades
  * @Date: 2021-01-25 21:48:41
- * @LastEditTime: 2021-01-28 10:10:22
+ * @LastEditTime: 2021-01-31 18:32:33
  */
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
@@ -13,6 +13,7 @@ import Footer from './Footer'
 import Rightbar from './Rightbar'
 import Voice from './Voice'
 import Live2D from './Live2d'
+import Loading from './Loading'
 import { changeToTop } from '../../store/actions'
 const MyLayout = ({children}) =>{
     
@@ -42,6 +43,7 @@ const MyLayout = ({children}) =>{
         }
     }
     return <div className={config.theme}>
+        <Loading/>
         <MyHeader/>
         <div className="main" style={{minHeight:minHeight}}>
             <div className="container">

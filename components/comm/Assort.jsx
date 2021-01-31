@@ -2,7 +2,7 @@
  * @Descripttion: 分类
  * @Author: Hades
  * @Date: 2021-01-27 14:12:36
- * @LastEditTime: 2021-01-28 10:18:49
+ * @LastEditTime: 2021-01-31 16:23:49
  */
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
@@ -33,7 +33,7 @@ const Assort = () =>{
                   return (
                       <div className="section-item" key={item.id}>
                           <i className={"iconfont icon " + item.icon} />
-                          <Link href={{pathname:"/section",query:{section:item.id}}}>
+                          <Link href={{pathname:"/section",query:{id:item.id}}}>
                               <a>{item.name}</a>
                           </Link>
                       </div>

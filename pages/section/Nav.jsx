@@ -1,4 +1,4 @@
-const Nav = ({list,changeNav}) =>{
+const Nav = ({list=[],changeNav}) =>{
     return (
         <div className="nav">
         <div className="nav-item" onClick={()=>changeNav('all')}>全部</div>

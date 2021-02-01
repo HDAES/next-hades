@@ -1,5 +1,5 @@
 
-const Header = ({info,length}) =>{
+const Header = ({info={icon:'',name:''},length}) =>{
     return (
         <div className="section-header">
             <i className={`iconfont ${info.icon}`} />

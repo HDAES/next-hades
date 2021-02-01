@@ -2,10 +2,10 @@
  * @Descripttion: 公共头部
  * @Author: Hades
  * @Date: 2021-01-25 21:45:56
- * @LastEditTime: 2021-01-26 21:47:35
+ * @LastEditTime: 2021-02-01 14:09:40
  */
 import Link from 'next/link'
-
+import { Input } from 'antd'
 import Router, { withRouter } from 'next/router'
 import './layout.less'
 const MyHeader = ({router}) =>{
@@ -42,7 +42,7 @@ const MyHeader = ({router}) =>{
                     }
                 </div>
                 <div className="search">
-                    {/* <Input.Search onSearch={value =>Router.push(`/search?keywords=`+value) } placeholder="请输入关键词"/> */}
+                    <Input.Search onSearch={value =>Router.push(`/search?keywords=`+value) } placeholder="请输入关键词"/>
                 </div>
             </div>
         </div>

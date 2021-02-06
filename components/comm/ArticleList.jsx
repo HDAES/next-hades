@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Router from 'next/router'
 const PAGE_SIZE = 4;
 
-const ArticleList = ({ articleList }) =>{
+const ArticleList = ({ articleList =[] }) =>{
 
     const [page, setPage] = useState(1)
     function getMore() {
@@ -10,7 +10,7 @@ const ArticleList = ({ articleList }) =>{
     }
     return (
         <div className="article-list">
-            {
+            {  
                 articleList.slice(0, page * PAGE_SIZE).map((item, index) => {
                     return (
                         <div key={index} className="item">

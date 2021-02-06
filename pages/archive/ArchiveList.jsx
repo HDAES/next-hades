@@ -2,7 +2,7 @@
  * @Descripttion: 归档类容
  * @Author: Hades
  * @Date: 2021-01-27 21:49:56
- * @LastEditTime: 2021-01-27 22:06:18
+ * @LastEditTime: 2021-02-01 22:44:30
  */
 
 import archive from '../../lib/utils/archive'
@@ -12,7 +12,7 @@ const ArchiveList = ({ list }) => {
     let formateList = archive(list)
     return (
         <div className="archive-list">
-            {
+            {   
                 formateList.map((year, y) => {
                     return <div key={y} className="year">
                         <div className="year-lable">{year.year}</div>

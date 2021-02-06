@@ -3,22 +3,16 @@ import { Anchor } from 'antd';
 
 const { Link } = Anchor;
 const Catalog = ({content}) =>{
-    function toTop(e){
-        console.log(e)
-        let anchorElement = document.getElementById(e);
-        if (anchorElement) {
-            anchorElement.scrollIntoView({ behavior: 'smooth' });
-        }
-    }
     
     return (
         <div className="catalog">
             <div className="title">目录</div>
             <Anchor offsetTop={80}>
-            {
+            {   
+                content!=null?
                 content.map((item,index) =>{
                   return  <Link  key={index} href={`#${item.url}`} title={item.name}></Link>
-                })
+                }):<div></div>
             }
             </Anchor>
             <style jsx>{`

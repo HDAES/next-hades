@@ -2,12 +2,13 @@
  * @Descripttion: 关于
  * @Author: Hades
  * @Date: 2021-01-26 11:31:04
- * @LastEditTime: 2021-01-28 13:46:57
+ * @LastEditTime: 2021-02-06 10:33:04
  */
 import MyLayout from '../../components/layout/Layout'
 import Me from './Me'
 import Contacts from './Contacts'
 import Map from './Map'
+import Friend from './Friend'
 const About = () =>{
     return (
         <MyLayout>
@@ -20,6 +21,7 @@ const About = () =>{
                 <div className="about-container">
                     <div className="me-friend">
                         <Me/>
+                        <Friend/>
                     </div>
                     <div className="des-map">
                         <Contacts/>

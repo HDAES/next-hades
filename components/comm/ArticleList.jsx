@@ -30,7 +30,7 @@ const ArticleList = ({ articleList =[] }) =>{
                                 </div>
                             </div>
                             <div onClick={()=>Router.push({pathname: '/article',query: { id:item.id}})} className="image">
-                                <img className="art-image" src={item.image} />
+                                <img className="art-image" src={item.fullImage} />
                             </div>
                             <div className="description">{item.des}</div>
                         </div>

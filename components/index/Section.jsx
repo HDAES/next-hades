@@ -7,7 +7,7 @@ const Section = ({section}) =>{
                     return <div key={index} className="sectionItem">
                         <Link href={{ pathname: "/section", query: { id: item.id }}}>
                         <div className="section-container">
-                            <img src={item.image}  alt={item.name} />
+                            <img src={item.fullImg}  alt={item.name} />
                             <div className="mask" />
                             <div className="name">{item.name}</div>
                             <div className={`iconfont icon ${item.icon}`} />

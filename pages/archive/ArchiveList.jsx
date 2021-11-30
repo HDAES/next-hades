@@ -2,7 +2,7 @@
  * @Descripttion: 归档类容
  * @Author: Hades
  * @Date: 2021-01-27 21:49:56
- * @LastEditTime: 2021-02-01 22:44:30
+ * @LastEditTime: 2021-11-30 21:29:31
  */
 
 import archive from '../../lib/utils/archive'
@@ -25,7 +25,7 @@ const ArchiveList = ({ list }) => {
                                             month.articles.map((article, a) => {
                                                 return <li key={a}>
                                                     <span className="time">{article.createTime.slice(5, 10)}</span>
-                                                    <Link href={{ pathname: '/article', query: { id: article.c_id } }}>
+                                                    <Link href={{ pathname: '/article', query: { id: article.id } }}>
                                                         <a>{article.title}</a>
                                                     </Link>
                                                 </li>

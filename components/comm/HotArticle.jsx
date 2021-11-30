@@ -2,7 +2,7 @@
  * @Descripttion: 热门文章
  * @Author: Hades
  * @Date: 2021-01-27 13:51:00
- * @LastEditTime: 2021-01-28 10:03:53
+ * @LastEditTime: 2021-11-30 21:27:54
  */
 
 import Link from 'next/link'
@@ -18,7 +18,7 @@ const HotArticle = ({list}) => {
                   return (
                       <div className="item" key={index}>
                           <span>{index + 1}</span>
-                          <Link href={{ pathname: '/article' }}>
+                          <Link href={{ pathname: '/article',query:{ id:item.id} }}>
                               <a>{item.title}</a>
                           </Link>
                       </div>

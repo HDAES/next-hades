@@ -3,7 +3,7 @@ import { Anchor } from 'antd';
 
 const { Link } = Anchor;
 const Catalog = ({content}) =>{
-    
+
     return (
         <div className="catalog">
             <div className="title">目录</div>

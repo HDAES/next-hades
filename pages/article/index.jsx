@@ -26,7 +26,7 @@ const Article = ({data,content}) =>{
                 tempArr.push(element.replace(RegExp("#","g"),''))
             }
         });
-
+        
         let Catalog = []
         tempArr.forEach(item =>{
             let obj = { }

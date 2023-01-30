@@ -17,7 +17,7 @@ const Map = () =>{
     }
 
     function drawMe(map) {
-        let Point = new window.BMap.Point(106.530791,29.604849);
+        let Point = new window.BMap.Point(106.516274,29.800357);
         let myIcon = new BMap.Icon("/local.png", new window.BMap.Size(28, 28), {
           imageSize: new window.BMap.Size(28, 28)
         });

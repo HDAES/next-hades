@@ -13,13 +13,20 @@ const MyHeader = ({router}) =>{
     const routerIndex = router.route
     const navlist = [{
         index: '/',
+        target: '_parent',
         name: '首页'
     },{
         index: '/archive',
+        target: '_parent',
         name: '归档'
     },{
         index: '/about',
+        target: '_parent',
         name: '关于'
+    },{
+        index: 'http://admin.xl686.com/',
+        target: '_blank',
+        name: '后台'
     }]
     return (
         <div className="header">
@@ -34,8 +41,8 @@ const MyHeader = ({router}) =>{
                     {
                         navlist.map((item) => {
                             return (
-                                <Link href={item.index} key={item.index}>
-                                    <a className={ routerIndex == item.index?'tabs_active tab':'tab'} >{item.name}</a>
+                                <Link href={item.index} key={item.index} >
+                                    <a className={ routerIndex == item.index?'tabs_active tab':'tab'} target={item.target}>{item.name}</a>
                                 </Link>
                             )
                         })

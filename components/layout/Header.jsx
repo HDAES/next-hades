@@ -27,6 +27,10 @@ const MyHeader = ({router}) =>{
         index: 'http://admin.xl686.com/',
         target: '_blank',
         name: '后台'
+    },{
+        index: 'http://three.xl686.com/',
+        target: '_blank',
+        name: 'ThreeJs'
     }]
     return (
         <div className="header">

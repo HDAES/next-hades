@@ -19,21 +19,35 @@ import { getArticle } from '../../lib/api'
 const Article = ({data,content}) =>{
     const [catalog,setCatalog] = useState([1,2,3,4])
     useEffect( ()=>{
-        let arrContent = data.content.split('\n\n')
-        let tempArr = []
+       
+        let arrContent = data.content.split('\n')
+        console.log(arrContent);
+         let Catalog = []
         arrContent.forEach(element => {
-            if(element.indexOf("#")>-1){
-                tempArr.push(element.replace(RegExp("#","g"),''))
+            if(element.indexOf('# ')>-1){
+                let item = element.replace(/[.#``]/g,'').replace(/^\s*/,"").replace(/\s/g,'-').toLowerCase()
+                console.log(item);
+                Catalog.push({name: item,url: item})
             }
         });
+      
+        // let tempArr = []
+        // arrContent.forEach(element => {
+        //     if(element.indexOf("#")>-1){
+        //         tempArr.push(element.replace(RegExp("#","g"),''))
+        //     }
+        // });
         
-        let Catalog = []
-        tempArr.forEach(item =>{
-            let obj = { }
-            obj.name = item
-            obj.url = item.replace(RegExp(/\.| /,"g"),'').toLowerCase()
-            Catalog.push(obj)
-        })
+        // console.log(tempArr);
+        
+
+        // tempArr.forEach(item =>{
+        //     let obj = { }
+        //     obj.name = item
+
+        //     obj.url = item.replace(RegExp(/\.| /,"g"),'').toLowerCase()
+        //     Catalog.push(obj)
+        // })
         setCatalog(Catalog)
     },[])
    

@@ -11,7 +11,7 @@ const Catalog = ({content}) =>{
             {   
                 content!=null?
                 content.map((item,index) =>{
-                  return  <Link  key={index} href={`#${item.url}`} title={item.name}></Link>
+                  return  <Link key={index} href={`#${item.url}`} title={item.name}></Link>
                 }):<div></div>
             }
             </Anchor>
@@ -32,6 +32,7 @@ const Catalog = ({content}) =>{
                 display: block;
                 color:var(--header-logo-color);
                 font-size:18px;
+                
             }
             `}</style>
         </div>
